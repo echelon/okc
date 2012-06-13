@@ -63,6 +63,9 @@ hr {
 	padding: 10px;
 }
 
+ul {
+	list-style-type: none;
+}
 .subopt {
 	display: none;
 }
