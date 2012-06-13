@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		If you're reading this, I think I want to get to know you.
+		You should tell me what you think of my terrible HTML/JS. 
+
+		And look, I'm not even running analytics! I _told_ you I wasn't 
+		creepy.
+		-->
+
+		<title>&mdash; compose a message &mdash;</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="content-language" content="en">
+		<!-- Handheld Support -->
+		<!-- 
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="viewport" 
+		content="width=device-width, height=device-height, 
+		user-scalable=no, target-densitydpi=high-dpi" />
+		-->
+
+		<!-- No, I don't want this coming back to me... -->
+		<meta name="robots" content="noindex">
+
+		<!-- Libraries -->
+		<script type="text/javascript" src="./lib/jquery.js"></script>
+		<script type="text/javascript" src="./lib/jquery.easing.js"></script>
+
+		<!-- Style -->
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+
+		<!-- Form scripting; hooray Javascript! -->
+		<script type="text/javascript" src="./script.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function() { 
+			});
+		</script>
+	</head>
+	<body>
+		
+		<div id="main">
+			<div id="intro">
+				<h2>Hi, I'm Brandon</h2>
+				<p>Thanks for visiting my profile.</p>
+				<p>I'm going to be keeping busy this summer with science
+				projects, trips, attempting trying to launch a business, 
+				<em>et cetera</em>.</p>
+
+				<p>I probably won't be able to to initiate 
+				conversation with you.</p>
+				
+				<p><small><em>(No, I'm not shy at all...)</em></small></p>
+				
+				<p>If you like my profile, please send me a friendly 
+				message! I promise I won't bite. <em>(I'm not one of 
+				those creepy internet people...)</em></p>
+
+			</div>
+		</div>
+		<br>
+		<div id="compose">
+			<h3>Don't want to compose a message? Try this.</h3>
+
+			<!--<p class="small">Yes, this is actually a joke.</p>
+			<p>You can construct your response below. Check all the
+			things!</p>-->
+
+<form> 
+<table>
+	<!-- Language -->
+	<tr id="opt-lang" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="lang">
+		</td>
+		<td>
+			<label for="lang">
+				I can speak a foreign language! We should totally geek 
+				out together and speak it in public so nobody 
+				else can understand us.
+			</label>
+
+			<div class="subopt">
+				* Chinese 
+				* Spanish (Hey, that wont work!)
+				* German
+				* Japanese
+				* French
+				* Italian
+				* Something elsee ______ 
+				** Note, Brandon only knows Japanese and a little Chinese, 
+				but he can 
+				make an effort to learn. His English is a work in progress.
+			</div>
+		</td>
+	</tr>
+
+	<!-- Making a game -->
+	<tr id="opt-makegame" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="makegame">
+		</td>
+		<td>
+			We should program a videogame together sometime. 
+			<div class="subopt">
+				* I can program 
+				* I can program a little
+				* I don\'t know how, but I\'d love to learn
+				* I don\'t know how, but I can do the art!
+				* None of the above!
+			</div>
+		</td>
+	</tr>
+
+	<!-- Art -->
+	<tr id="opt-art" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="art">
+		</td>
+		<td>
+			Im an artist. 
+			Maybe we can collaborate!
+			<div class="subopt">
+				You should check it out my gallary at
+				<input width="200">. 
+			</div>
+		</td>
+	</tr>
+
+	<!-- Likes -->
+	<tr id="opt-like" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="like">
+		</td>
+		<td>
+			I totally like that thing that you like.
+			<div class="subopt">
+				* Zelda
+				* Alien (except Prometheus, yech!)
+				* Pokemon (BRANDON DOES NOT CLAIM TO ENJOY THIS!)
+				* Scary movies
+			</div>
+		</td>
+	</tr>
+
+	<!-- Reddit -->
+	<tr id="opt-reddit" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="reddit">
+		</td>
+		<td>
+			The narwhal bacons at&hellip;
+			<div class="subopt">
+				* midnight
+				* half past noon
+				* sea gulls!
+			</div>
+		</td>
+	</tr>
+
+	<!-- Weather Balloon -->
+	<tr id="opt-balloon" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="balloon">
+		</td>
+		<td>
+			I read someplace that one of your summer projects is 
+			launching a weather balloon with cameras attached and 
+			I want to go with you! Sounds like an adventure!
+		</td>
+	</tr>
+	
+	<!-- Play -->
+	<tr id="opt-play" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="play">
+		</td>
+		<td>
+			I want to play with your: 
+			<div class="subopt">
+				* Adorable dog <a href="http://imgur.com/a/dV1S0">(pics)</a>
+				* Robot
+				* PS3 
+					* on the beach
+						* by campfire
+			</div>
+		</td>
+	</tr>
+	
+	<!-- Nothing in common -->
+	<tr id="opt-nothing" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="nothing">
+		</td>
+		<td>
+			We don't have anything in common, sorry.
+		</td>
+	</tr>
+
+	<!-- Stupid -->
+	<tr id="opt-nothing" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="nothing">
+		</td>
+		<td>
+			You're an idiot
+		</td>
+	</tr>
+</table>
+
+			Signed, <input id="name" value="I'm not giving you my name!">
+</form>
+			<br>
+			<h3>Your message,</h3>
+
+			<textarea>I have nothing to say to you.</textarea>
+
+			<p>Just copy/paste. You can send it as-is or tailor it as 
+			you see fit.</p>
+
+			<p class="small">Disclaimer: Yes, this whole page is a joke. 
+			Additionally, statements made in italic text are to be taken
+			as complete distortions and should not be trusted. 
+			Or maybe they're just Latin.</p>
+		</div>
+		<br>
+
+	</body>
+</html>
