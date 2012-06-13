@@ -55,6 +55,10 @@ hr {
 	font-size: 0.8em;
 }
 
+.quote {
+	color: #ccf;
+}
+
 .option {
 	padding: 10px;
 }
@@ -72,7 +76,7 @@ td.checkbox {
 	padding: 0px 20px 0px 5px;
 }
 
-input#name {
+input#name, input#artist {
 	background-color: rgba(0, 0, 0, 0.2);
 	color: #efefef;
 	width: 300px;
@@ -82,3 +86,5 @@ input#name {
 	border-left: 0px;
 	padding: 5px;
 }
+
+

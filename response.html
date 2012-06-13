@@ -24,8 +24,8 @@
 		<meta name="robots" content="noindex">
 
 		<!-- Libraries -->
-		<script type="text/javascript" src="./lib/jquery.js"></script>
-		<script type="text/javascript" src="./lib/jquery.easing.js"></script>
+		<script type="text/javascript" src="./jquery.js"></script>
+		<script type="text/javascript" src="./jquery.easing.js"></script>
 
 		<!-- Style -->
 		<link rel="stylesheet" type="text/css" href="./style.css" />
@@ -34,6 +34,7 @@
 		<script type="text/javascript" src="./script.js"></script>
 		<script type="text/javascript"> 
 			$(document).ready(function() { 
+					main();
 			});
 		</script>
 	</head>
@@ -47,13 +48,15 @@
 				projects, trips, attempting trying to launch a business, 
 				<em>et cetera</em>.</p>
 
-				<p>I probably won't be able to to initiate 
+				<p>I probably won't be able to to browse through profiles 
+				and, causality as it is, likely won't initiate 
 				conversation with you.</p>
 				
-				<p><small><em>(No, I'm not shy at all...)</em></small></p>
+				<p><small><em>(No, it's not at all that 
+				I'm shy ...)</em></small></p>
 				
-				<p>If you like my profile, please send me a friendly 
-				message! I promise I won't bite. <em>(I'm not one of 
+				<p>If you like my profile, <strong>please send me a friendly 
+				message!</strong> I promise I won't bite. <em>(I'm not one of 
 				those creepy internet people...)</em></p>
 
 			</div>
@@ -71,7 +74,7 @@
 	<!-- Language -->
 	<tr id="opt-lang" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="lang">
+			<input type="checkbox" id="lang" class="checkbox">
 		</td>
 		<td>
 			<label for="lang">
@@ -81,16 +84,50 @@
 			</label>
 
 			<div class="subopt">
-				* Chinese 
-				* Spanish (Hey, that wont work!)
-				* German
-				* Japanese
-				* French
-				* Italian
-				* Something elsee ______ 
-				** Note, Brandon only knows Japanese and a little Chinese, 
-				but he can 
-				make an effort to learn. His English is a work in progress.
+				<p>I speak,</p>
+				<ul>
+					<li>
+						<input type="checkbox" id="lang-chinese"
+							class="checkbox2">
+						Chinese 
+					</li>
+					<li>
+						<input type="checkbox" id="lang-spanish"
+							class="checkbox2">
+						Spanish (hey, that won't work!)
+					</li>
+					<li>
+						<input type="checkbox" id="lang-german"
+							class="checkbox2">
+						German
+						</li>
+
+					<li>
+						<input type="checkbox" id="lang-japanese"
+							class="checkbox2">
+						Japanese
+					</li>
+
+					<li>
+						<input type="checkbox" id="lang-french"
+							class="checkbox2">
+						French
+					</li>
+
+					<li>
+						<input type="checkbox" id="lang-italian"
+							class="checkbox2">
+						Italian	
+					</li>
+					<li>
+						<input type="checkbox" id="lang-other"
+							class="checkbox2">
+						Something else:	
+					</li>
+				</ul>
+				<p class="small">* Note: Brandon only knows Japanese and a 
+				little Chinese, but he can make an effort to learn from 
+				you.</p>
 			</div>
 		</td>
 	</tr>
@@ -98,7 +135,7 @@
 	<!-- Making a game -->
 	<tr id="opt-makegame" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="makegame">
+			<input type="checkbox" id="makegame" class="checkbox">
 		</td>
 		<td>
 			We should program a videogame together sometime. 
@@ -115,14 +152,14 @@
 	<!-- Art -->
 	<tr id="opt-art" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="art">
+			<input type="checkbox" id="art" class="checkbox">
 		</td>
 		<td>
 			Im an artist. 
 			Maybe we can collaborate!
 			<div class="subopt">
-				You should check it out my gallary at
-				<input width="200">. 
+				<p>You should check it out my gallary at:</p>
+				<input width="200" id="artist" value="(website)">. 
 			</div>
 		</td>
 	</tr>
@@ -130,14 +167,14 @@
 	<!-- Likes -->
 	<tr id="opt-like" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="like">
+			<input type="checkbox" id="like" class="checkbox">
 		</td>
 		<td>
 			I totally like that thing that you like.
 			<div class="subopt">
 				* Zelda
 				* Alien (except Prometheus, yech!)
-				* Pokemon (BRANDON DOES NOT CLAIM TO ENJOY THIS!)
+				* Pokemon <em>(BRANDON DOES NOT CLAIM TO ENJOY THIS!)</em>
 				* Scary movies
 			</div>
 		</td>
@@ -146,7 +183,7 @@
 	<!-- Reddit -->
 	<tr id="opt-reddit" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="reddit">
+			<input type="checkbox" id="reddit" class="checkbox">
 		</td>
 		<td>
 			The narwhal bacons at&hellip;
@@ -161,7 +198,7 @@
 	<!-- Weather Balloon -->
 	<tr id="opt-balloon" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="balloon">
+			<input type="checkbox" id="balloon" class="checkbox">
 		</td>
 		<td>
 			I read someplace that one of your summer projects is 
@@ -173,7 +210,7 @@
 	<!-- Play -->
 	<tr id="opt-play" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="play">
+			<input type="checkbox" id="play" class="checkbox">
 		</td>
 		<td>
 			I want to play with your: 
@@ -183,6 +220,12 @@
 				* PS3 
 					* on the beach
 						* by campfire
+							* you can make that happen?
+
+						<!-- TODO: Only if last item is chosen -->
+						<p class="quote">
+							Brandon says: I can that happen. 
+						</p>
 			</div>
 		</td>
 	</tr>
@@ -190,20 +233,55 @@
 	<!-- Nothing in common -->
 	<tr id="opt-nothing" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="nothing">
+			<input type="checkbox" id="nothing" class="checkbox">
+		</td>
+		<td>
+			I <em><strike>like</strike></em> love coffee!
+
+			<div class="subopt">
+				* I think coffee is pretty damn awesome.
+				* I know a more hipster coffee joint than you.
+				* You own a Keurig machine? You monster! That's an affront
+				to my sensibilities!
+
+				<!-- TODO: Only if option 2 or 3 is chosen -->
+				<p class="quote">
+					Brandon says: I get it. You like coffee. 
+					No need to rub it in.
+					Gosh.
+				</p>
+			</div>
+		</td>
+	</tr>
+
+
+	<!-- Nothing in common -->
+	<tr id="opt-nothing" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="nothing" class="checkbox">
 		</td>
 		<td>
 			We don't have anything in common, sorry.
+			<div class="subopt">
+				<p class="quote">
+					Brandon says: I'm totally cool and respectful of that.
+				</p>
+			</div>
 		</td>
 	</tr>
 
 	<!-- Stupid -->
 	<tr id="opt-nothing" class="option">
 		<td class="checkbox">
-			<input type="checkbox" id="nothing">
+			<input type="checkbox" id="nothing" class="checkbox">
 		</td>
 		<td>
 			You're an idiot
+			<div class="subopt">
+				<p class="quote">
+					Brandon says: You make Brandon sad. :'(
+				</p>
+			</div>
 		</td>
 	</tr>
 </table>
