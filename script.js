@@ -136,6 +136,7 @@ var updateText = function()
 	}
 
 	// Other exit conditions
+	// TODO: 'number of times clicked: 1, 2, 3,... 'way too many''
 	if(checked.closest('#idiot').length) {
 		message = 'hey brandn I thikn you\'re profile is stupid. ' +
 			'u should lern to b like norml gaiz. ' +
@@ -226,6 +227,19 @@ var updateText = function()
 			}
 		});
 	}
+
+	/**
+	 * Passionate about...
+	 */
+	if(checked.closest('#passion').length) {
+		var a = $('#passion .subopt input').val();
+		if(a != '(that thing I\'m really passionate about)') {
+			message += "You should know that I'm really into ";
+			message += a;
+		}
+		message += '\n\n';
+	}
+
 
 	/**
 	 * Program
@@ -333,6 +347,129 @@ var updateText = function()
 		message += '\n\n';
 	}
 
+	/**
+	 * Weather balloon
+	 */
+	if(checked.closest('#balloon').length) {
+		message += "The random science stuff you do sounds interesting. " +
+			"I'd like to see you launch that weather balloon, or at least "+
+			"see a video.\n\n";
+	}
+
+	/**
+	 * Active
+	 */
+	if(checked.closest('#active').length) {
+		message += "I like to stay active. I enjoy "
+		var trim = false;
+		$('#active .subopt input:checked').each(function() {
+			trim = true;
+			switch($(this).val()) {
+				case '0':
+					message += 'jogging, ';
+					break;
+				case '1':
+					message += 'camping, ';
+					break;
+				case '2':
+					message += 'swimming, ';
+					break;
+				case '3':
+					message += 'tennis, ';
+					break;
+				case '4':
+					message += 'hiking, ';
+					break;
+				case '5':
+					message += 'cycling, ';
+					break;
+				case '6':
+					message += 'hitting the gym, ';
+					break;
+				case '7':
+					message += 'dancing, ';
+					break;
+				case '8':
+					message += 'videogames (heh heh...), ';
+					break;
+			}
+		});
+		if(trim) {
+			message = message.substring(0, message.length - 2);
+			message += ". ";
+		}
+		else {
+			message += "unspecified physical activities because I " +
+				"didn't check any of the boxes.";
+		}
+		message += "\n\n";
+	}
+
+	/**
+	 * Play
+	 */
+	if(checked.closest('#play').length) {
+		switch($('#play .subopt input:checked').val()) {
+			case '0': 
+				message += "Your dog is absolutely adorable! (Corgis are so "+
+					"awesome!)";
+				break;
+			case '1': 
+				message += "What kind of work do you do with robotics?";
+				break;
+			case '2':
+				message += "Now how are you going to accomplish the feat " +
+					"of playing PS3 on the beach with me, huh? " +
+					"That sounds kind of absurd, but color me curious.";
+				break;
+		}
+		message += "\n\n";
+	}
+
+	/**
+	 * Converse 
+	 */
+	if(checked.closest('#converse').length) {
+		message += "I enjoy talking in depth about complex subjects, such " +
+			"as the following: ";
+		var trim = false;
+		$('#converse .subopt input:checked').each(function() {
+			trim = true;
+			switch($(this).val()) {
+				case '0':
+					message += 'science, ';
+					break;
+				case '1':
+					message += 'technology, ';
+					break;
+				case '2':
+					message += 'philosophy, ';
+					break;
+				case '3':
+					message += 'speculative fiction ' +
+							'(I &lt;3 Star Wars), ';
+					break;
+				case '4':
+					message += 'politics, ';
+					break;
+				case '5':
+					message += 'zombie apocalypse preparedness ' +
+						'(because you never know), ';
+					break;
+			}
+		});
+		if(trim) {
+			message = message.substring(0, message.length - 2);
+			message += ". ";
+		}
+		else {
+			message += "an unspecified list of items. " +
+				"I'm just giving you a hard time.";
+		}
+		message += "\n\n";
+	}
+
+
 
 	/**
 	 * Coffee
@@ -359,7 +496,7 @@ var updateText = function()
 	 */
 	if(checked.closest('#reddit').length) {
 		if($('#reddit .subopt input:checked').val() == '2') {
-			message += 'Oh, by the way, I\'m a Redditor!\n\n' 
+			message += 'Oh, by the way, I\'m a Redditor! ;)\n\n' 
 		}
 	}
 
