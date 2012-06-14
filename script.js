@@ -8,6 +8,7 @@ var main = function()
 	var k, l, opt, subopt, html = '';
 
 	// NEW: Build the form. 
+	// This bit makes me cringe, but alas... 
 	for(k in form) {
 		opt = form[k];
 
@@ -23,6 +24,12 @@ var main = function()
 		// TODO
 		if('suboptType' in opt) {
 			html += '<div>';
+
+			// Prepend text.
+			if('subPrepend' in opt) {
+				html += opt.subPrepend;
+			}
+
 			// RADIO INPUT
 			if(opt.suboptType == 'radio') {
 				html += '<ul>';
@@ -35,7 +42,7 @@ var main = function()
 					html += subopt;
 					html += "</li>\n";
 				}
-				html += '<ul>';
+				html += '</ul>';
 			}
 			// CHECKBOX 
 			else if(opt.suboptType == 'checkbox') {
@@ -49,14 +56,26 @@ var main = function()
 					html += subopt;
 					html += "</li>\n";
 				}
-				html += '<ul>';
+				html += '</ul>';
 			}
+	
+			// Append text.
+			if('subAppend' in opt) {
+				html += opt.subAppend;
+			}
+
 			html += '</div>';
 		}
 
-		// Package and append
+		// Package and append to DOM
 		html += '</td></tr>';
 		$('table').append(html);
+
+		// Callback 
+		// Allows for scripting, etc. of the options. 
+		if('domAddCallback' in opt) {
+			opt.domAddCallback();
+		}
 	}
 
 
