@@ -116,18 +116,48 @@ var main = function()
 /**
  * Update the textbox with the latest state.
  * FIXME: This is very messy code.
+ * XXX: Most of the interactivity should be controlled by data.js
  */
 var updateText = function()
 {
 	var BLANK_MSG = 'I have nothing to say to you.';
 	var message = '';
 	var name = $('#name').val();
+	var checked = $('.checkbox:checked');
+
 	if(name == "I'm not giving you my name!") {
 		name = '';
 	}
 
-	if(!name && !$('.checkbox:checked').length) {
+	// No message
+	if(!name && !checked.length) {
 		$('textarea').html(BLANK_MSG);
+		return;
+	}
+
+	// Other exit conditions
+	if(checked.closest('#idiot').length) {
+		message = 'hey brandn I thikn you\'re profile is stupid. ' +
+			'u should lern to b like norml gaiz. ' +
+			'oh wait u cant, haha losr';
+		$('textarea').html(message);
+		return;
+	}
+	if(checked.closest('#nothing').length) {
+		message = 'Hi Brandon,\n\nI think your profile is clever ' +
+			'and all, but I don\'t believe we have anything in common / ' +
+			'you\'re just not my type. I did want to commend you on your ' +
+			'efforts though!\n\n' +
+			'I wish you all the best in finding your match.\n\n';
+
+		if(name) {
+			message += " &mdash; " + name + '\n\n';
+		}
+
+		message += 'p.s. thanks for not being creepy and messaging me ' +
+			'back with reasons you think we should be together.';
+			
+		$('textarea').html(message);
 		return;
 	}
 
@@ -141,6 +171,81 @@ var updateText = function()
 		message += ',';
 	}
 	message += '\n\n';
+	
+	// FIXME: This is so messy. I shouldn't be doing it this way...
+
+	/**
+	 * Likes
+	 */
+	if(checked.closest('#likes').length) {
+		message += "Let me start off by stating that we share some " +
+			"important interests. (Don't get too excited!)\n\n";
+
+		$('#likes .subopt input:checked').each(function() {
+			switch($(this).val()) {
+				case '0':
+					message += "I'm a huge fan of the Legend of Zelda " +
+						"games. Predictably, my favorite games in the " +
+						"series are in this order: Majora's Mask, Skyward " +
+						"Sword, Link to the Past, Ocarina of Time, Link's "	+
+						"Awakening, etc. " +
+						"(AND NO, I WON'T CHANGE THAT PERFECT ORDER.)\n\n";
+					break;
+				case '1':
+					message += "I think the Alien films were pretty cool, " +
+						"at least the original Ridley Scott and James " +
+						"Cameron films; I won't mention those other, " +
+						"non-cannon films in the same sentence.\n\n"; 
+						break;
+				case '2':
+					// TODO: 'name' used persuasion. It's super-effective.
+					message += "Haha! You like Pokemon and just won't " +
+						"admit it! That's okay, I won't tell anyone. " +
+						"You shouldn't be so ashamed of our 90's " +
+						"heritage, though. Besides, you won't ever get " +
+						"to play me if you can't cop to it. " +
+						"(My persuasion is super effective. Am I right?)" +
+						"\n\n";
+						break;
+				case '3':
+					message += "Scary movies are fun. Especially in the " +
+						"dark during a thunderstorm; makes for the " +
+						"creepiest power outages ever!\n\n";
+					break;
+				case '4':
+					message += "You know what's fun? Building forts! "+
+						"There's nothing better than coming home and " +
+						"crawling into the most secure and defensible " +
+						"position this side of the Potomac. Curling " +
+						"up, snacking on Cheez-Its&reg;, reading by the " +
+						"Christmas lights strung to the makeshift " +
+						"ceiling... " +
+						"Also, dogfort meme: http://i.imgur.com/UJvBn.jpg " +
+						"Please tell me you dress your corgi like that!\n\n";
+					break;
+			}
+		});
+	}
+
+	/**
+	 * Coffee
+	 */
+	if(checked.closest('#coffee').length) {
+		message += 'As it happens, I really enjoy coffee. ' +
+			'I understand that you also happen to share this rare ' +
+			'appreciation with me. We\'ll have to take that as some ' +
+			'kind of sign.';
+
+		var a = $('#coffee .subopt input:checked').val();
+		switch(a) {
+			case '1':
+			case '2':
+				message += ' (...though I\'m rather certain I know more ' +
+					'about coffee than you, young padawan.)';
+				break;
+		}
+		message += '\n\n';
+	}
 
 
 	// Outro
