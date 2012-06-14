@@ -98,13 +98,58 @@ var main = function()
 		updateText();
 		return false;
 	});
+
+	// Click a subopt checkbox/radio
+	$('.subopt input[type=checkbox]').change(function(){
+		updateText();
+	});
+	$('.subopt input[type=radio]').change(function(){
+		updateText();
+	});
+
+	// Change a textbox.
+	$('input:text').change(function(){
+		updateText();
+	});
 }
 
 /**
  * Update the textbox with the latest state.
+ * FIXME: This is very messy code.
  */
 var updateText = function()
 {
-	// For now, no-op. 
+	var BLANK_MSG = 'I have nothing to say to you.';
+	var message = '';
+	var name = $('#name').val();
+	if(name == "I'm not giving you my name!") {
+		name = '';
+	}
+
+	if(!name && !$('.checkbox:checked').length) {
+		$('textarea').html(BLANK_MSG);
+		return;
+	}
+
+	// Intro
+	message = 'Hi Brandon';
+	if(name) {
+		message += ', I\'m ' + name + ','; 
+		//and it\'s a pleasure to meet you,';
+	}
+	else {
+		message += ',';
+	}
+	message += '\n\n';
+
+
+	// Outro
+	message += 'Hope to hear from you!';
+	if(name) {
+		message += "\n\n &mdash; " + name;
+	}
+
+
+	$('textarea').html(message);
 }
 

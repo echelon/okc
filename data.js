@@ -319,6 +319,13 @@ var form = {
 		]
 	},*/
 
+	/*
+	 * TODO: Option -- "some final notes" checkbox
+	 * 	* Pleasure to meet you
+	 * 	* I enjoyed this page
+	 * 	* etc.
+	 */
+
 	/**
 	 * Nothing in common... really?!
 	 */
