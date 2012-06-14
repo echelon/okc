@@ -42,7 +42,7 @@ var form = {
 			var el = $('#coffee .dynamic');
 			// Give some feedback. 
 			$('#coffee ul input').change(function(){
-				switch($('input:checked').val()) {
+				switch($('#coffee .subopt input:checked').val()) {
 					case '1':
 						el.html('<p class="quote">Brandon says: \
 							I get it. You really like coffee.</p>');
@@ -151,14 +151,14 @@ var form = {
 			<p class="quote">(I\'m kidding.)</p>\
 			<p class="quote">Anyhow, the project is a work in progress. \
 			You should join us if you\'re into nerding out about our own little\
-			private NASA.</p>'
+			private NASA hijinks.</p>'
 	},
 
 	/**
 	 * Outdoor activities
 	 */
 	active: {
-		optText: 'Brandon, just so you know, I tend to stay pretty active.',
+		optText: 'Just so you know, I tend to stay pretty active.',
 		suboptType: 'checkbox',
 		subPrepend: '<p>We could totally do these things on a regular basis. \
 			Do you think you can keep up?</p>',
@@ -187,6 +187,7 @@ var form = {
 			'philosophy',
 			'works of fiction',
 			'politics',
+			'zombie apocalypse preparedness'
 		]
 	},
 
@@ -235,7 +236,7 @@ var form = {
 			'What the...? I don\'t even...',
 			'<em>*groan*</em>, I haven\'t seen those since highschool.',
 			'That\'s the best you could come up with, Brandon? Lame.',
-			'I know! I know! ...but why aren\'t there any real options?'
+			'I know the answer! ...but why aren\'t there any real options?'
 		]
 	},
 
@@ -252,7 +253,6 @@ var form = {
 				<span class="small">(<a \
 				href="http://imgur.com/a/dV1S0">pics</a>)</span>',
 			'Robot',
-			// on the beach -> by campfire? -> you can make that happen?
 		],
 		domAddCallback: function() {
 			// Add option.
@@ -265,7 +265,7 @@ var form = {
 					$('#play-ps3-2').append('<ul class="extra">\
 						<li id="play-ps3-3">\
 						<input type="radio" class="radio" name="" \
-							value="0"> By campfire...</li></ul>');
+						value="0"> By moonlight and campfire...</li></ul>');
 					install4();
 				});
 			},
@@ -280,7 +280,7 @@ var form = {
 
 			// First suboption
 			$('#play ul input').change(function(){
-				switch($('input:checked').val()) {
+				switch($('#play .subopt input:checked').val()) {
 					case '2':
 						$('#play-ps3-1').append('<ul class="extra">\
 							<li id="play-ps3-2">\
@@ -298,16 +298,12 @@ var form = {
 	/**
 	 * Date
 	 */
-	date: {
+	/*date: {
 		optText: 'I\'m not asking you out, Brandon (so don\'t you dare \
 			get that impression!). Nevertheless, let me \
 			<em><strike>describe</strike></em> select from among the \
 			following items my &ldquo;ideal first date&rdquo;.',
 		suboptType: 'radio',
-		/*subAppend: '<p><em>Brandon, don\'t you dare think that this in \
-			any way, shape, or form constitutes me asking you out! Just \
-			because you can throw together a mildly amusing webpage \
-			does not mean that I find you normal.</em></p>',*/
 		subopts: [
 			'Typical meetup at a local coffee shop: caffeine intake, \
 				<strike>complex mating ritual imposed on us by \
@@ -321,5 +317,28 @@ var form = {
 			'These are all of the options? I\'m losing hope here,\
 				Brandon...',
 		]
+	},*/
+
+	/**
+	 * Nothing in common... really?!
+	 */
+	nothing: {
+		optText: 'We don\'t have anything in common, Brandon. Sorry!',
+		suboptType: 'none',
+		subPrepend: '<p class="quote">Brandon says: \
+			I\'m totally cool and respectful of that. If you have any \
+			thoughts or opinions on my profile (however harsh), I\'d \
+			love to hear!</p>'
+	},
+
+	/**
+	 * Idiot
+	 */
+	idiot: {
+		optText: 'You\'re an idiot!',
+		suboptType: 'none',
+		subPrepend: '<p class="quote">Brandon says: \
+			You make Brandon sad :\'(</p>'
 	}
 }
+
