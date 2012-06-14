@@ -228,6 +228,113 @@ var updateText = function()
 	}
 
 	/**
+	 * Program
+	 */
+	if(checked.closest('#program').length) {
+		message += 'I think it would be pretty fun to work together '+
+					'on some projects, especially making a videogame. ';
+		switch($('#program .subopt input:checked').val()) {
+			case '0': 
+				message += 'I\'m a pretty good programmer. Do ' +
+					'you think you can keep up with me? ;) ';
+				break;
+			case '1': 
+			case '2': 
+				message += 'What I don\'t know, I\'m willing to learn! ';
+				break;
+			case '3':
+				message += 'I can\'t program, but I\'ll do the creative ' +
+					'work! ';
+				break;
+			case '4':
+				message += 'Though I\'ll probably just watch. ';
+				break;
+		}
+		message += 'What kind of game would you want to make?\n\n';
+	}
+
+	/**
+	 * Artist
+	 */
+	if(checked.closest('#artist').length) {
+		message += "I do creative stuff, and like collaborating with " +
+			"others, too. ";
+		var a = $('#artist .subopt input').val();
+		if(a != '(website)') {
+			message += 'You should out my work: ';
+			message += a;
+		}
+		message += '\n\n';
+	}
+
+	/**
+	 * Language.
+	 */
+	if(checked.closest('#language').length) {
+		message += "I speak "
+		var other = false;
+		$('#language .subopt input:checked').each(function() {
+			switch($(this).val()) {
+				case '0':
+					other = true;
+					message += 'French, ';
+					break;
+				case '1':
+					other = true;
+					message += 'Chinese, ';
+					break;
+				case '2':
+					other = true;
+					message += 'Spanish, ';
+					break;
+				case '3':
+					other = true;
+					message += 'German, ';
+					break;
+				case '5':
+					other = true;
+					message += 'Italian, ';
+					break;
+				case '6':
+					var li = $('#lang-input').val();
+					if(li != '(insert here)') {
+						other = true;
+						// Oh no, XSS!
+						message += li;
+						message += ', ';
+					}
+					break;
+			}
+		});
+		if(other) {
+			message = message.substring(0, message.length - 2);
+			message += ". ";
+			message += "Perhaps you'd want to learn from me?";
+		}
+		else {
+			message += "a foreign language. ";
+		}
+
+		// TODO Japanese and Chinese here.
+		$('#language .subopt input:checked').each(function() {
+			if($(this).val() == '4') {
+				if(other) {
+					message += '\n\nOh, and Japanese! ';
+				}
+				else {
+					message += '\n\nIt\'s Japanese! ';
+				}
+				message += 'Does that surprise you? '+
+					'I bet we could totally nerd out in public with none ' +
+					'being the wiser. (Or maybe they\'ll think we\'re space '+
+					'aliens!) ';
+			}
+		});
+		message += '\n\n';
+	}
+
+
+	/**
 	 * Coffee
 	 */
 	if(checked.closest('#coffee').length) {
@@ -247,6 +354,14 @@ var updateText = function()
 		message += '\n\n';
 	}
 
+	/**
+	 * Reddit
+	 */
+	if(checked.closest('#reddit').length) {
+		if($('#reddit .subopt input:checked').val() == '2') {
+			message += 'Oh, by the way, I\'m a Redditor!\n\n' 
+		}
+	}
 
 	// Outro
 	message += 'Hope to hear from you!';
