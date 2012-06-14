@@ -79,6 +79,10 @@ td.checkbox {
 	padding: 0px 20px 0px 5px;
 }
 
+a {
+	color: #c44;
+}
+
 input#name, input#artist, input#lang-input {
 	background-color: rgba(0, 0, 0, 0.2);
 	color: #efefef;

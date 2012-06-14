@@ -122,14 +122,13 @@
 		<td>
 			<label for="lang">
 				I can speak a foreign language! We should totally geek 
-				out together and speak it in public so nobody 
-				else can understand us.
+				out together and speak it in public. (Nobody 
+				else will understand us!)
 			</label>
 
 			<div class="subopt">
 				<p>I speak,</p>
 				<ul>
-
 					<li>
 						<input type="checkbox" id="lang-french"
 							class="checkbox2">
@@ -178,23 +177,6 @@
 		</td>
 	</tr>
 
-	<!-- Making a game -->
-	<tr id="opt-makegame" class="option">
-		<td class="checkbox">
-			<input type="checkbox" id="makegame" class="checkbox">
-		</td>
-		<td>
-			We should program a videogame together sometime. 
-			<div class="subopt">
-				* I can program 
-				* I can program a little
-				* I don\'t know how, but I\'d love to learn
-				* I don\'t know how, but I can do the art!
-				* None of the above!
-			</div>
-		</td>
-	</tr>
-
 	<!-- Art -->
 	<tr id="opt-art" class="option">
 		<td class="checkbox">
@@ -234,6 +216,7 @@
 		<td>
 			The narwhal bacons at&hellip;
 			<div class="subopt">
+
 				* midnight
 				* half past noon
 				* sea gulls!
@@ -252,7 +235,48 @@
 			I want to go with you! Sounds like an adventure!
 		</td>
 	</tr>
-	
+
+	<!-- Making a game -->
+	<tr id="opt-makegame" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="makegame" class="checkbox">
+		</td>
+		<td>
+			We should program a videogame together sometime. 
+			<div class="subopt">
+				<p>What better way to spend a rainy Saturday?</p>
+			<ul>
+				<li>
+					<input type="radio" id="program-yes" name="program"
+						value="yes" class="radio">
+						I can program 
+					</input>
+				</li>
+				<li>
+					<input type="radio" id="program-some" name="program"
+						value="some" class="radio">
+						I can program a little
+					</input>
+				</li>
+				<li>
+					<input type="radio" id="program-teach" name="program"
+						value="teach" class="radio">
+						I don't know how, but I'd love to learn.
+					</input>
+				</li>
+				<li>
+					<input type="radio" id="program-art" name="program"
+						value="art" class="radio">
+						I don't know how, but I can do the art!
+					</input>
+				</li>
+				</ul>
+			</div>
+		</td>
+	</tr>
+
+
+
 	<!-- Play -->
 	<tr id="opt-play" class="option">
 		<td class="checkbox">
@@ -311,7 +335,7 @@
 			Signed, <input id="name" value="I'm not giving you my name!">
 </form>
 			<br>
-			<h3>Your message,</h3>
+			<h3>Your automagically generated message,</h3>
 
 			<textarea>I have nothing to say to you.</textarea>
 
@@ -320,8 +344,8 @@
 
 			<p class="small">Disclaimer: Yes, this whole page is a joke. 
 			Additionally, statements made in italic text are to be taken
-			as complete distortions and should not be trusted. 
-			Or maybe they're just Latin.</p>
+			as complete distortions of the truth and should not be trusted. 
+			Or maybe they're just phrases in Latin.</p>
 		</div>
 		<br>
 
