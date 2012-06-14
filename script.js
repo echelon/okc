@@ -23,7 +23,7 @@ var main = function()
 		// Suboptions 
 		// TODO
 		if('suboptType' in opt) {
-			html += '<div>';
+			html += '<div class="subopt">';
 
 			// Prepend text.
 			if('subPrepend' in opt) {
@@ -78,6 +78,8 @@ var main = function()
 		}
 	}
 
+	// Take care of the 'signed' form reset
+	installFormRefresh('input#name', 'I\'m not giving you my name!');
 
 	// Click a main checkbox
 	$('.checkbox').change(function(){
