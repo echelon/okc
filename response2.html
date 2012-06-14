@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		If you're reading this, I think I want to get to know you.
+		You should tell me what you think of my terrible HTML/JS. 
+
+		And look, I'm not even running analytics! I _told_ you I wasn't 
+		creepy.
+		-->
+
+		<title>&mdash; compose a message &mdash;</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="content-language" content="en">
+		<!-- Handheld Support -->
+		<!-- 
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="viewport" 
+		content="width=device-width, height=device-height, 
+		user-scalable=no, target-densitydpi=high-dpi" />
+		-->
+
+		<!-- No, I don't want this coming back to me... -->
+		<meta name="robots" content="noindex">
+
+		<!-- Libraries -->
+		<script type="text/javascript" src="./jquery.js"></script>
+		<script type="text/javascript" src="./jquery.easing.js"></script>
+
+		<!-- Style -->
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+
+		<!-- Form scripting; hooray Javascript! -->
+		<script type="text/javascript" src="./data.js"></script>
+		<script type="text/javascript" src="./script.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function() { 
+					main();
+			});
+		</script>
+	</head>
+	<body>
+		
+		<div id="main">
+			<div id="intro">
+				<h2>Hi, I'm Brandon</h2>
+				<p>Thanks for visiting my profile.</p>
+				<p>I'm going to be keeping busy this summer with science
+				projects, trips, attempting trying to launch a lasing 
+				business, <em>et cetera</em>.</p>
+
+				<p>I probably won't be able to to browse through profiles 
+				and, causality as it is, likely won't initiate 
+				conversation.</p>
+				
+				<p><small><em>(It's not at all that 
+				I'm shy...!)</em></small></p>
+				
+				<p>If you like my profile, <strong>please send me a friendly 
+				message!</strong> I promise I won't bite. <em>(I'm not one of 
+				those creepy internet people...)</em></p>
+
+			</div>
+		</div>
+		<br>
+		<div id="compose">
+			<h3>Don't want to compose a message? Try this.</h3>
+
+			<form> 
+				<table>
+				</table>
+
+				Signed, <input id="name" value="I'm not giving you my name!">
+			</form>
+			<br>
+			<h3>Your automagically generated message,</h3>
+
+			<textarea>I have nothing to say to you.</textarea>
+
+			<p>Just copy/paste. You can send it as-is or tailor it as 
+			you see fit.</p>
+
+			<p class="small">Disclaimer: Yes, this whole page is a joke. 
+			Additionally, statements made in italic text are to be taken
+			as complete distortions of the truth and should not be trusted. 
+			Or maybe they're just phrases in Latin.</p>
+		</div>
+		<br>
+
+	</body>
+</html>
