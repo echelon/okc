@@ -45,15 +45,15 @@
 				<h2>Hi, I'm Brandon</h2>
 				<p>Thanks for visiting my profile.</p>
 				<p>I'm going to be keeping busy this summer with science
-				projects, trips, attempting trying to launch a business, 
-				<em>et cetera</em>.</p>
+				projects, trips, attempting trying to launch a lasing 
+				business, <em>et cetera</em>.</p>
 
 				<p>I probably won't be able to to browse through profiles 
 				and, causality as it is, likely won't initiate 
 				conversation.</p>
 				
-				<p><small><em>(No, it's not at all that 
-				I'm shy ...)</em></small></p>
+				<p><small><em>(It's not at all that 
+				I'm shy...!)</em></small></p>
 				
 				<p>If you like my profile, <strong>please send me a friendly 
 				message!</strong> I promise I won't bite. <em>(I'm not one of 
@@ -71,6 +71,49 @@
 
 <form> 
 <table>
+	
+	<!-- Coffee -->
+	<tr id="opt-coffee" class="option">
+		<td class="checkbox">
+			<input type="checkbox" id="coffee" class="checkbox">
+		</td>
+		<td>
+			I <em><strike>like</strike></em> love coffee!
+
+			<div class="subopt">
+				<p>To clarify just how much I like coffee,</p>
+			<ul>
+
+				<li>
+					<input type="checkbox" id="coffee-1"
+						class="checkbox2">
+						I think coffee is pretty damn awesome.
+				</li>
+				<li>
+					<input type="checkbox" id="coffee-2"
+					class="checkbox2">
+						I know a more hipster coffee joint than you.
+				</li>
+				<li>
+					<input type="checkbox" id="coffee-3"
+						class="checkbox2">
+						You own a Keurig machine? You monster! 
+						That's an affront to my sensibilities!
+				</li>
+			</ul>
+
+				<!-- TODO: Only if option 2 or 3 is chosen -->
+				<p class="quote">
+					Brandon says: I get it. You like coffee. 
+					No need to rub it in.
+					Gosh.
+				</p>
+			</div>
+		</td>
+	</tr>
+
+
+
 	<!-- Language -->
 	<tr id="opt-lang" class="option">
 		<td class="checkbox">
@@ -86,43 +129,46 @@
 			<div class="subopt">
 				<p>I speak,</p>
 				<ul>
+
+					<li>
+						<input type="checkbox" id="lang-french"
+							class="checkbox2">
+						Fran&#xe7;ais	
+					</li>
+
 					<li>
 						<input type="checkbox" id="lang-chinese"
 							class="checkbox2">
-						Chinese 
+						 &#x4e2d;&#x6587;
 					</li>
 					<li>
 						<input type="checkbox" id="lang-spanish"
 							class="checkbox2">
-						Spanish (hey, that won't work!)
+						Espa&#xf1;ol (We can't pretend to be spies with this!)
 					</li>
 					<li>
 						<input type="checkbox" id="lang-german"
 							class="checkbox2">
-						German
+						Deutsch
 						</li>
 
 					<li>
 						<input type="checkbox" id="lang-japanese"
 							class="checkbox2">
-						Japanese
-					</li>
-
-					<li>
-						<input type="checkbox" id="lang-french"
-							class="checkbox2">
-						French
+						&#x65e5;&#x672c;&#x8a9e;
 					</li>
 
 					<li>
 						<input type="checkbox" id="lang-italian"
 							class="checkbox2">
-						Italian	
+						Italiano
 					</li>
 					<li>
 						<input type="checkbox" id="lang-other"
 							class="checkbox2">
-						Something else:	
+							Something else:	
+						<input width="200" id="lang-input" 
+							value="(insert here)">. 
 					</li>
 				</ul>
 				<p class="small">* Note: Brandon only knows Japanese and a 
@@ -229,30 +275,6 @@
 			</div>
 		</td>
 	</tr>
-	
-	<!-- Nothing in common -->
-	<tr id="opt-nothing" class="option">
-		<td class="checkbox">
-			<input type="checkbox" id="nothing" class="checkbox">
-		</td>
-		<td>
-			I <em><strike>like</strike></em> love coffee!
-
-			<div class="subopt">
-				* I think coffee is pretty damn awesome.
-				* I know a more hipster coffee joint than you.
-				* You own a Keurig machine? You monster! That's an affront
-				to my sensibilities!
-
-				<!-- TODO: Only if option 2 or 3 is chosen -->
-				<p class="quote">
-					Brandon says: I get it. You like coffee. 
-					No need to rub it in.
-					Gosh.
-				</p>
-			</div>
-		</td>
-	</tr>
 
 
 	<!-- Nothing in common -->
@@ -264,7 +286,7 @@
 			We don't have anything in common, sorry.
 			<div class="subopt">
 				<p class="quote">
-					Brandon says: I'm totally cool and respectful of that.
+					Brandon says: And I'm totally cool and respectful of that.
 				</p>
 			</div>
 		</td>
