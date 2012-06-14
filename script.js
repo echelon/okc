@@ -90,7 +90,7 @@ var main = function()
 			});
 		}
 		else {
-			$(this).closest('.option').find('.subopt').slideUp({
+			$(this).closest('tr').find('.subopt').slideUp({
 				duration: 800,
 				easing: 'easeInOutBack'
 			});

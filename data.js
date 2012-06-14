@@ -240,21 +240,59 @@ var form = {
 	},
 
 	/**
-	 * TODO
-	 * Play with your...
+	 * "Play with your..."
 	 * Innuendo? Nah...
+	 * TODO: This is messy.
 	 */
 	play: {
 		optText: 'I want to play with your...',
 		suboptType: 'radio',
 		subopts: [
-			'adorable dog \
+			'Adorable dog \
 				<span class="small">(<a \
 				href="http://imgur.com/a/dV1S0">pics</a>)</span>',
-			'robot',
-			'TODO: Add PS3 and chain programmatically',
+			'Robot',
 			// on the beach -> by campfire? -> you can make that happen?
-		]
+		],
+		domAddCallback: function() {
+			// Add option.
+			$('#play ul').append('<li id="play-ps3-1">\
+				<input type="radio" class="radio" name="play-subopt"\
+					value="2"><span class="small">PS3...</span></li>');
+
+			var install3 = function() {
+				$('#play-ps3-2 input').change(function(){
+					$('#play-ps3-2').append('<ul class="extra">\
+						<li id="play-ps3-3">\
+						<input type="radio" class="radio" name="" \
+							value="0"> By campfire...</li></ul>');
+					install4();
+				});
+			},
+			install4 = function() {
+				$('#play-ps3-3 input').change(function(){
+					$('#play-ps3-3').append('<ul class="extra">\
+						<li id="play-ps3-4">\
+						<input type="radio" class="radio" name="" \
+							value="0"> <em>You can do that?</em> </li></ul>');
+				});
+			};
+
+			// First suboption
+			$('#play ul input').change(function(){
+				switch($('input:checked').val()) {
+					case '2':
+						$('#play-ps3-1').append('<ul class="extra">\
+							<li id="play-ps3-2">\
+							<input type="radio" class="radio" name="" \
+								value="0"> On the beach...</li></ul>');
+						install3();
+						break;
+					default:
+						$('#play-ps3-1 .extra').remove();
+				}
+			});
+		}
 	},
 
 	/**
@@ -264,7 +302,7 @@ var form = {
 		optText: 'I\'m not asking you out, Brandon (so don\'t you dare \
 			get that impression!). Nevertheless, let me \
 			<em><strike>describe</strike></em> select from among the \
-			following menu items my "ideal first date".',
+			following items my &ldquo;ideal first date&rdquo;.',
 		suboptType: 'radio',
 		/*subAppend: '<p><em>Brandon, don\'t you dare think that this in \
 			any way, shape, or form constitutes me asking you out! Just \
@@ -272,16 +310,16 @@ var form = {
 			does not mean that I find you normal.</em></p>',*/
 		subopts: [
 			'Typical meetup at a local coffee shop: caffeine intake, \
-				complex mating ritual yakkety yak chitchat, and then we \
-				go our separate ways',
+				<strike>complex mating ritual imposed on us by \
+				society / pop culture</strike>, \
+				<em><strike>yakkety yak</strike></em> \
+				chitchat, and then we go our separate ways',
 			'<strike>Dinner and a movie</strike> <small>(That\'s a \
 				terrible first date idea! What if you\'re a boring creep?\
 				I\'d be stuck with you for hours.)</small>',
 			'Come up with something inventive and unique!',
 			'These are all of the options? I\'m losing hope here,\
-				Brandon'
+				Brandon...',
 		]
 	}
-
-
 }
